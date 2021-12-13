@@ -38,7 +38,10 @@ const Header = () => {
         </button>
       </DesktopActionGroup>
         <Logo />
-        <SubscribeWrapper>Subscribe</SubscribeWrapper>
+        <SubscribeWrapper>
+          <Button>Subscribe</Button>
+          <SubLink href="/">Already a subscriber?</SubLink>
+        </SubscribeWrapper>
       </MainHeader>
     </header>
   );
@@ -81,12 +84,24 @@ const DesktopActionGroup = styled(ActionGroup)`
 `
 
 const SubscribeWrapper = styled.div`
-  justify-self: end;
   display: none;
-
+  
   @media ${QUERIES.laptopAndUp} {
     display: revert;
+    position: relative;
+    justify-self: end;
   }
+`
+
+const SubLink = styled.a`
+  position: absolute;
+  width: 100%;
+  margin-top: 8px;
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-gray-900);
+  font-style: italic;
+  text-decoration: underline;
 `
 
 const MainHeader = styled(MaxWidthWrapper)`
